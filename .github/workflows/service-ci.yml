@@ -1,0 +1,23 @@
+name: Service CI/CD
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+  workflow_dispatch:
+
+jobs:
+  service:
+    uses: PipelineIQproject/pipeline_main/.github/workflows/reusable-node-service-ci.yml@dev
+    with:
+      service_name: frontend
+      image_name: final_capstone-frontend
+      dockerfile: frontend/Dockerfile
+      node_project_dir: frontend
+      chart_path: frontend
+      container_port: "8080"
+      smoke_mode: http
+      sonar_organization: pipelineiqproject
+      sonar_project_key: pipelineiq-frontend
+    secrets: inherit

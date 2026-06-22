@@ -13,7 +13,7 @@ jobs:
     with:
       service_name: frontend
       image_name: final_capstone-frontend
-      dockerfile: frontend/Dockerfile
+      dockerfile: Dockerfile
       node_project_dir: frontend
       chart_path: frontend
       container_port: "8080"

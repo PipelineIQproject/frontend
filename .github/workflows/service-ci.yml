@@ -20,4 +20,6 @@ jobs:
       smoke_mode: http
       sonar_organization: pipelineiqproject
       sonar_project_key: pipelineiq-frontend
+      helm_dev_branch: dev
+      helm_prod_branch: main
     secrets: inherit

@@ -47,3 +47,6 @@ The pipeline calls the reusable workflow in `PipelineIQproject/pipeline_main` an
 | `SMOKE_TEST_ENV_FILE` | Optional dotenv content; usually not required for the Nginx smoke test. |
 
 Create a protected GitHub Environment named `production` so the prod Helm value update requires approval.
+
+
+

@@ -11,6 +11,7 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 ENV VITE_AUTH_BASE_URL=$VITE_AUTH_BASE_URL
 RUN npm run build
 
+
 FROM nginx:1.29-alpine3.22
 USER root
 RUN apk upgrade --no-cache \

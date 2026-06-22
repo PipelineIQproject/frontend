@@ -1,8 +1,9 @@
 FROM node:20-alpine3.22 AS build
-RUN apk update && apk upgrade --no-cache
+RUN apk upgrade --no-cache
 WORKDIR /app
 COPY frontend/package.json ./
-RUN npm install
+COPY frontend/package-lock.json ./
+RUN npm ci
 COPY frontend ./
 ARG VITE_API_BASE_URL=
 ARG VITE_AUTH_BASE_URL=
@@ -10,8 +11,9 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 ENV VITE_AUTH_BASE_URL=$VITE_AUTH_BASE_URL
 RUN npm run build
 
-FROM nginx:1.29-alpine
-RUN apk update && apk upgrade --no-cache \
+FROM nginx:1.29-alpine3.22
+USER root
+RUN apk upgrade --no-cache \
     && mkdir -p /tmp/client_temp /tmp/proxy_temp /tmp/fastcgi_temp /tmp/uwsgi_temp /tmp/scgi_temp \
     && chown -R nginx:nginx /tmp /var/cache/nginx /var/log/nginx /usr/share/nginx/html
 COPY frontend/nginx-main.conf /etc/nginx/nginx.conf

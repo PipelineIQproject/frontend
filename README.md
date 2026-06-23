@@ -8,7 +8,7 @@ Independent repository for the PipelineIQ React/Vite frontend.
 docker build -t <acr-login-server>/final_capstone-frontend:local -f frontend/Dockerfile .
 ```
  
-## Local Run
+## Local Run 
   
 The frontend is built with Vite and served by non-root Nginx on container port 8080.
 

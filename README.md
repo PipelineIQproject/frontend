@@ -6,7 +6,7 @@ Independent repository for the PipelineIQ React/Vite frontend.
 
 ```bash
 docker build -t <acr-login-server>/final_capstone-frontend:local -f frontend/Dockerfile .
-```
+``` 
  
 ## Local Run 
   

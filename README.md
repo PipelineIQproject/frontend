@@ -10,7 +10,7 @@ docker build -t <acr-login-server>/final_capstone-frontend:local -f frontend/Doc
  
 ## Local Run 
    
-The frontend is built with Vite and served by non-root Nginx on container port 8080.
+The frontend is built with Vite and served by non-root Nginx on container port 8080. 
 
 
 ```bash

@@ -1,4 +1,4 @@
-  # PipelineIQ Frontend
+  # PipelineIQ Frontend  
    
 Independent repository for the PipelineIQ React/Vite frontend.
 
